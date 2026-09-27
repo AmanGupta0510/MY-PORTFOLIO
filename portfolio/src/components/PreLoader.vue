@@ -63,7 +63,13 @@ function spawnExhaustParticle() {
 }
 
 onMounted(() => {
-  const tl = gsap.timeline({ onComplete: () => emit('done') })
+
+  document.body.style.overflow = 'hidden'
+  const tl = gsap.timeline({ onComplete: () => {
+    document.body.style.overflow = ''
+    emit('done')
+  }
+  })
 
   // Phase 1: config lines type in one by one
   const lines = configEl.value.querySelectorAll('.config-line')
@@ -96,10 +102,10 @@ onUnmounted(() => clearInterval(exhaustInterval))
 
 <style scoped>
 .preloader {
-  position: fixed;
+  position: fixed !important;
   inset: 0;
   background: #05050a;
-  z-index: 100;
+  z-index: 2000;
   overflow: hidden;
 }
 

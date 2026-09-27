@@ -81,9 +81,9 @@ defineExpose({ navRef })
   font-weight: 700;
   font-size: 1.25rem;
 background: linear-gradient(
-    110deg,
+    130deg,
     #4d4c4c 0%,
-    #555555 35%,
+    #747272 35%,
     #ffffff 45%,
     #ffffff 55%,
     #676464 65%,
@@ -96,7 +96,7 @@ background: linear-gradient(
    color: transparent;
      /* filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.5)); */
 
-  animation: moveGradient 3s linear infinite;
+  animation: moveGradient 5s linear infinite;
 }
 
 @keyframes moveGradient {

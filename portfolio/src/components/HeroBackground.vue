@@ -35,12 +35,12 @@ watch(pageReady, async (val) => {
       onComplete:()=>{
         messageIndex = (messageIndex + 1) % role.length
         roleMessage.value = role[messageIndex]
-        gsap.fromTo('.role' , {opacity:0,y:10} , {opacity:1 , y:0 , duration:0.3})
+        gsap.fromTo('.role' , {opacity:0,y:10} , {opacity:1 , y:0 , duration:0.6})
       },
 
     })
 
-  }, 1500)
+  }, 1800)
 
 
   const tl = gsap.timeline({defaults:{ease:'power3.out'}});
@@ -50,11 +50,11 @@ watch(pageReady, async (val) => {
   gsap.set(navElem.value.navRef , {y:-20});
   tl.to(navElem.value.navRef , {opacity:1 , y:0 , duration:0.8 , clearProps:'transform'})
     .to('.eyebrow' , {opacity:1 , x:0 , duration:0.6} , '-=0.4')
-    .to('.name'  , {opacity:1 , x:0 , duration:0.7} , '-=0.4' )
-    .to('.role-container' , {opacity:1 , x:0 , duration:0.6} , '-=0.4')
-    .to('.desc' , {opacity:1 , x:0 , duration:0.6} , '-=0.4')
-    .to('.social-icon' , {opacity:1 , y:0 , duration:0.5, stagger:0.12 , each:0.12 , from:'center', clearProps:'transform', ease:'back.out(1.7)' } , '-=0.5')
-    .to('.hero-photo' , {opacity:1 , scale:1 , rotate:0 , duration:2 , ease:'back.out(1.6)'} , '-=0.7')
+    .to('.name'  , {opacity:1 , x:0 , duration:0.7} , '-=0.35' )
+    .to('.role-container' , {opacity:1 , x:0 , duration:0.7} , '-=0.35')
+    .to('.desc' , {opacity:1 , x:0 , duration:0.7} , '-=0.35')
+    .to('.social-icon' , {opacity:1 , y:0 , duration:0.5, stagger:{each:0.09 , from:'center'}, clearProps:'transform', ease:'back.out(1.7)' } , '-=0.3')
+    .to('.hero-photo' , {opacity:1 , scale:1 , rotate:0 , duration:0.9 , ease:'back.out(1.6)'} , '-=0.6')
 
 
 })
@@ -215,8 +215,8 @@ onUnmounted(() => {
 
 .hero-photo {
    opacity: 0;
-  width: 22rem;
-  height: 22rem;
+  width: 23rem;
+  height: 23rem;
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid rgba(198, 202, 204, 0.4);
@@ -235,7 +235,7 @@ onUnmounted(() => {
 .social-icon {
   /* scales from 32px on phones up to 48px on desktop */
   opacity: 0;
-  font-size: clamp(22px, 7vw, 40px);
+  font-size: clamp(32px, 7vw, 40px);
   line-height: 1;
   display: inline-flex;
   text-decoration: none;
