@@ -69,7 +69,7 @@ onUnmounted(() => {
   <Preloader @done="pageReady = true" />
   <NavBar v-if="pageReady" ref="navElem" />
 
-  <section class="hero p-4 p-md-5 min-vh-100 d-flex align-items-center">
+  <section class="hero  min-vh-100 d-flex align-items-center">
     <div class="container">
       <div class="row justify-content-center align-items-center">
         <div class="col-12 col-lg-6 px-3 px-md-5 order-2 order-lg-1">
@@ -154,12 +154,12 @@ onUnmounted(() => {
 .hero {
   position: relative;
   z-index: 1;
-  min-height: 100vh;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 3rem;
-  padding: 0 6rem;
+   padding: 5rem 0;
   font-family: 'Syne', sans-serif;
 }
 

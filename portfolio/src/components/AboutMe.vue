@@ -1,80 +1,86 @@
 <script setup>
+import { onMounted, onUnmounted } from 'vue'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+gsap.registerPlugin(ScrollTrigger)
+ScrollTrigger.config({ ignoreMobileResize: true })
 
-import { onMounted , onUnmounted } from 'vue';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-gsap.registerPlugin(ScrollTrigger);
-ScrollTrigger.config({ ignoreMobileResize: true });
-
-let ctx;
+let ctx
 
 onMounted(() => {
+  ctx = gsap.context(() => {
 
+    gsap.set(['.about-text', '.bio'], { y: 20, opacity: 0 })
+    gsap.set(['.stat-card-wrap'], { y: 20, opacity: 0 })
 
-    ctx = gsap.context(() =>{
+    const mm = gsap.matchMedia()
 
-        gsap.set(
-            ['.about'  , '.about-text','.bio' ] , {y:20}
-        );
-        gsap.set(['.stat-card-wrap'] , {y:20 , opacity:0});
+    // Desktop: plays once, deliberate timing
+    mm.add('(min-width:768px)', () => {
 
-        const tl = gsap.timeline({
-            defaults:{ease:'power3.out'},
-            scrollTrigger:{
-                trigger:'.about',
-                start:'top 70%',
-                toggleActions:'play reverse play reverse',
-                // markers:true,
-            }
-        })
-        tl.to('.about  .about-text ' , {opacity:1 , y:0 , duration:0.6})
-          .to('.bio' , {opacity:1 , y:0 , duration:0.7 } , '-=0.4')
+      gsap.timeline({
+        defaults: { ease: 'power3.out' },
+        scrollTrigger: {
+          trigger: '.about',
+          start: 'top 75%',
+          toggleActions: 'play reverse play reverse'
+        }
+      })
+      .to('.about-text', { opacity: 1, y: 0, duration: 0.6 })
+      .to('.bio', { opacity: 1, y: 0, duration: 0.7 }, '-=0.4')
 
-
-
-        const mm = gsap.matchMedia()
-
-        mm.add('(min-width:768px)' , ()=>{
-            gsap.timeline({
-                defaults:{ease:'power3.out'},
-                scrollTrigger:{
-                    trigger:'.stat-card-wrap',
-                    start:'top 80%',
-                    toggleActions:'play reverse play reverse'
-                }
-            }).to('.stat-card-wrap' , {opacity:1  , y:0, duration:0.5, stagger:{each:0.09 , from:'center'}, clearProps:'transform'} )
-        })
-
-        mm.add('(max-width:767px)' , ()=>{
-            gsap.timeline({
-                defaults:{ease:'power3.out'},
-                scrollTrigger:{
-                    trigger:'.stat-card-wrap',
-                    start:'top 90%',
-                    end:'bottom 30%',
-                    scrub:1,
-                    markers:'true'
-                }
-            }).to('.stat-card-wrap' , {opacity:1  , y:0, duration:0.5, stagger:0.5 , ease:'back.out(1.4)'})
-        })
-
-
+       gsap.timeline({
+    defaults: { ease: 'power3.out' },
+    scrollTrigger: {
+      trigger: '.stat-card-wrap',
+      start: 'top 85%',
+      toggleActions: 'play reverse play reverse',
+      markers:true
+    }
+  })
+  .to('.stat-card-wrap', {
+    opacity: 1,
+    y: 0,
+    duration: 0.5,
+    stagger: { each: 0.09, from: 'center' },
+    clearProps: 'transform'
+  })
 
 
     })
 
+    // Mobile: scrub, tied directly to scroll position
+    mm.add('(max-width:767px)', () => {
+      gsap.timeline({
+        scrollTrigger: {
+          trigger: '.about',
+          start: 'top 90%',
+          end: 'bottom 60%',
+          scrub: 1
+        }
+      })
+      .to('.about-text', { opacity: 1, y: 0, duration: 0.6 })
+      .to('.bio', { opacity: 1, y: 0, duration: 0.7 }, '-=0.4')
+      .to('.stat-card-wrap', {
+        opacity: 1,
+        y: 0,
+        duration: 0.5,
+        stagger: 0.12
+      }, '-=0.3')
+    })
 
-
+  })
 })
 
-onUnmounted(() =>{
-    ctx.revert()
+onUnmounted(() => {
+  ctx.revert()
 })
-
 </script>
 
+
+
 <template>
-    <section id="#About" class="about   p-md-5">
+    <section id="#About" class="about  ">
 
         <div class="d-flex pb-2 justify-content-center align-items-center">
             <span class="about-text">
@@ -158,12 +164,12 @@ onUnmounted(() =>{
 
     position: relative;
     z-index: 1;
-    min-height: 100vh;
+    padding: 5rem 0;
 }
 
 .about-text{
-    opacity: 0;
-    font-size:clamp(2.5rem , 4vw , 3.3rem);
+
+    font-size:clamp(2.5rem , 4vw , 2.8rem);
     font-family: monospace;
     font-weight: 800;
     color: #ffffff;
@@ -178,7 +184,7 @@ onUnmounted(() =>{
     border-radius: 20px;
 }
 .bio{
-  opacity: 0;
+
   font-family: monospace;
   font-size: clamp(1rem , 4vw , 1.2rem);
   color: #a0a8b3;
