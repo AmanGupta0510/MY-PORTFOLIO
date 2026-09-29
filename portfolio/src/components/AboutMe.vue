@@ -35,7 +35,7 @@ onMounted(() => {
       trigger: '.stat-card-wrap',
       start: 'top 85%',
       toggleActions: 'play reverse play reverse',
-      markers:true
+      // markers:true
     }
   })
   .to('.stat-card-wrap', {

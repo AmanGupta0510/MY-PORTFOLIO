@@ -130,7 +130,7 @@ background: linear-gradient(
 
   font-weight: 700;
   display: inline-block;
-  color: #bdc0c4;
+  color: #d5dbe1;
   text-decoration: none;
   transform: translateY(0);
   transition: transform 0.3s ease;
@@ -138,7 +138,7 @@ background: linear-gradient(
 
 }
 .nav-links a:hover {
-  color: #fbfbfb;
+  color: #fcfcfc;
   font-weight: 700;
   transform: translateY(-5px);
 

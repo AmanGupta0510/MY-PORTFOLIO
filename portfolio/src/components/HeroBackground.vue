@@ -184,7 +184,7 @@ onUnmounted(() => {
   margin: 0 0 0.5rem;
   color: #ffffff;
   text-shadow:
-    0 0 10px rgba(255, 255, 255, 0.6),
+    0 0 10px rgba(255, 255, 255, 0.3),
     0 0 20px rgba(56, 189, 248, 0.4);
 }
 .role-container{

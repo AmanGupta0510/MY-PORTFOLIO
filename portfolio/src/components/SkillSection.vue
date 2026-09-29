@@ -1,33 +1,34 @@
 <script setup>
 
-import { onMounted , onUnmounted } from 'vue'
+import { onMounted , onUnmounted , ref } from 'vue'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 ScrollTrigger.config({ ignoreMobileResize: true })
-const frontend  = [
+const frontend  = ref([
   { name: 'HTML', icon: 'devicon-html5-plain colored' },
   { name: 'CSS', icon: 'devicon-css3-plain colored' },
   { name: 'JavaScript', icon: 'devicon-javascript-plain colored' },
   { name: 'Bootstrap', icon: 'devicon-bootstrap-plain colored' },
   { name: 'Vue.js', icon: 'devicon-vuejs-plain colored' }
-]
-const backend = [
+])
+const backend = ref([
   { name: 'Flask', icon: 'devicon-flask-original colored' },
    { name: 'PostgreSQL', icon: 'devicon-postgresql-plain colored' },
   { name: 'MySQL', icon: 'devicon-mysql-plain colored' }
-]
+])
 
-const tools = [
+const tools = ref([
   { name: 'Linux', icon: 'devicon-linux-plain colored' },
   { name: 'Git', icon: 'devicon-git-plain colored' },
   { name: 'GitHub', icon: 'devicon-github-original colored' },
   { name: 'GSAP', icon: 'si si-greensock', gsap: true }
-]
-const programming_language = [
-   { name: 'Python', icon: 'devicon-python-plain colored' },
-   { name: 'Java', icon: 'devicon-java-plain colored' }
-]
+])
+const programming_language = ref([
+  { name: 'Python', icon: 'devicon-python-plain colored' },
+  { name: 'Java', icon: 'devicon-java-plain colored' }
+
+])
 
 let ctx;
 
@@ -43,8 +44,8 @@ onMounted(()=>{
             scrollTrigger: {
                 trigger: '.skill-card1',    // note: 'trigger', not 'ScrollTrigger'
                 start: 'top 95%',
-                markers: true,                // 'markers' (plural), not 'marker'
-                toggleActions: 'play none none reset',
+                // markers: true,                // 'markers' (plural), not 'marker'
+                toggleActions: 'play none none reverse',
             }
         })
         tl.to('.frontend' , {opacity:1 , x:0 , duration:0.3})
@@ -57,7 +58,7 @@ onMounted(()=>{
                 trigger: '.skill-card2',    // note: 'trigger', not 'ScrollTrigger'
                 start: 'top 95%',
                 // markers: true,                // 'markers' (plural), not 'marker'
-                toggleActions: 'play none none reset',
+                toggleActions: 'play none none reverse',
             }
         })
         tl2.to('.backend' , {opacity:1 , x:0 , duration:0.3})
@@ -70,7 +71,7 @@ onMounted(()=>{
                 trigger: '.skill-card4',    // note: 'trigger', not 'ScrollTrigger'
                 start: 'top 95%',
                 // markers: true,                // 'markers' (plural), not 'marker'
-                toggleActions: 'play none none reset',
+                toggleActions: 'play none none reverse',
             }
         })
         tl4.to('.languages' , {opacity:1 , x:0 , duration:0.3})
@@ -83,7 +84,7 @@ onMounted(()=>{
                 trigger: '.skill-card5',    // note: 'trigger', not 'ScrollTrigger'
                 start: 'top 95%',
                 // markers: true,                // 'markers' (plural), not 'marker'
-                toggleActions: 'play none none reset',
+                toggleActions: 'play none none reverse',
             }
         })
         tl5.to('.tools' , {opacity:1 , x:0 , duration:0.3})
@@ -317,7 +318,7 @@ onUnmounted(() =>{
 .skill-card3 span,
 .skill-card4 span,
 .skill-card5 span {
-  font-size: 1rem;
+  font-size: 0.8rem;
   color: #cbd5e1;
   font-weight: 900;
 }
