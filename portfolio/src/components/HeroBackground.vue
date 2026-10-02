@@ -138,7 +138,7 @@ onUnmounted(() => {
 
         <div class="col-12 col-lg-6 d-flex justify-content-center order-1 order-lg-2 mb-4 mb-lg-0">
           <div class="photo-frame">
-            <img src="/photo.jpeg" alt="Aman Gupta" class="hero-photo" />
+            <img src="/photo2.jpeg" alt="Aman Gupta" class="hero-photo" />
           </div>
         </div>
       </div>

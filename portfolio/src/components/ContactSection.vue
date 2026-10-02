@@ -99,7 +99,24 @@ const submitForm = () => {
 onMounted(() => {
   ctx = gsap.context(() => {
 
-    
+    gsap.set(['.contact-info'] , { x:-10, opacity:0})
+    gsap.set('.form-wrapper' , {opacity:0 , x:20})
+
+    const tl = gsap.timeline({
+            defaults:{ease:'power3.out'},
+            scrollTrigger: {
+                trigger: '.contact-section',    // note: 'trigger', not 'ScrollTrigger'
+                start: 'top 35%',// 'markers' (plural), not 'marker'
+                markers:true,
+                toggleActions: 'play reverse play reverse',
+      }
+    })
+    tl.to('.contact-info' , {x:0 , opacity:1 , duration:1} )
+     tl.to('.form-wrapper' , {x:0 , opacity:1 , duration:1} , '-=1' )
+
+   
+
+
 
   });
 
@@ -113,6 +130,7 @@ onUnmounted(() => {
 <style scoped>
 .contact-section {
     position: relative;
+    min-height: 100vh;
     z-index: 1;
     padding: 5rem 1.5rem 3rem;
     scroll-margin-top: 90px;
