@@ -107,14 +107,14 @@ onMounted(() => {
             scrollTrigger: {
                 trigger: '.contact-section',    // note: 'trigger', not 'ScrollTrigger'
                 start: 'top 35%',// 'markers' (plural), not 'marker'
-                markers:true,
+                // markers:true,
                 toggleActions: 'play reverse play reverse',
       }
     })
     tl.to('.contact-info' , {x:0 , opacity:1 , duration:1} )
      tl.to('.form-wrapper' , {x:0 , opacity:1 , duration:1} , '-=1' )
 
-   
+
 
 
 
@@ -130,7 +130,7 @@ onUnmounted(() => {
 <style scoped>
 .contact-section {
     position: relative;
-    min-height: 100vh;
+    min-height: 90vh;
     z-index: 1;
     padding: 5rem 1.5rem 3rem;
     scroll-margin-top: 90px;

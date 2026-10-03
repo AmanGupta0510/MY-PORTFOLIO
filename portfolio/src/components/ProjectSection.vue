@@ -17,30 +17,8 @@ const projects = ref([
 ,{
     project_name : 'My Portfolio',project_desc:'A performant, space-themed developer portfolio. It leverages Vue 3, Bootstrap, and GSAP to create an engaging, fully responsive interface that highlights my technical projects and expertise as a full-stack developer.' , tools:['html' , 'css' , 'bootstrap' ,'vue.js' , 'Gsap'] , github_link:'https://github.com/AmanGupta0510/MY-PORTFOLIO'
 }
-,{
-    project_name : 'My Portfolio',project_desc:'A performant, space-themed developer portfolio. It leverages Vue 3, Bootstrap, and GSAP to create an engaging, fully responsive interface that highlights my technical projects and expertise as a full-stack developer.' , tools:['html' , 'css' , 'bootstrap' ,'vue.js' , 'Gsap'] , github_link:'https://github.com/AmanGupta0510/MY-PORTFOLIO'
-}
-,{
-    project_name : 'My Portfolio',project_desc:'A performant, space-themed developer portfolio. It leverages Vue 3, Bootstrap, and GSAP to create an engaging, fully responsive interface that highlights my technical projects and expertise as a full-stack developer.' , tools:['html' , 'css' , 'bootstrap' ,'vue.js' , 'Gsap'] , github_link:'https://github.com/AmanGupta0510/MY-PORTFOLIO'
-}
-,{
-    project_name : 'My Portfolio',project_desc:'A performant, space-themed developer portfolio. It leverages Vue 3, Bootstrap, and GSAP to create an engaging, fully responsive interface that highlights my technical projects and expertise as a full-stack developer.' , tools:['html' , 'css' , 'bootstrap' ,'vue.js' , 'Gsap'] , github_link:'https://github.com/AmanGupta0510/MY-PORTFOLIO'
-}
-,{
-    project_name : 'My Portfolio',project_desc:'A performant, space-themed developer portfolio. It leverages Vue 3, Bootstrap, and GSAP to create an engaging, fully responsive interface that highlights my technical projects and expertise as a full-stack developer.' , tools:['html' , 'css' , 'bootstrap' ,'vue.js' , 'Gsap'] , github_link:'https://github.com/AmanGupta0510/MY-PORTFOLIO'
-}
-,{
-    project_name : 'My Portfolio',project_desc:'A performant, space-themed developer portfolio. It leverages Vue 3, Bootstrap, and GSAP to create an engaging, fully responsive interface that highlights my technical projects and expertise as a full-stack developer.' , tools:['html' , 'css' , 'bootstrap' ,'vue.js' , 'Gsap'] , github_link:'https://github.com/AmanGupta0510/MY-PORTFOLIO'
-}
-,{
-    project_name : 'My Portfolio',project_desc:'A performant, space-themed developer portfolio. It leverages Vue 3, Bootstrap, and GSAP to create an engaging, fully responsive interface that highlights my technical projects and expertise as a full-stack developer.' , tools:['html' , 'css' , 'bootstrap' ,'vue.js' , 'Gsap'] , github_link:'https://github.com/AmanGupta0510/MY-PORTFOLIO'
-}
-,{
-    project_name : 'My Portfolio',project_desc:'A performant, space-themed developer portfolio. It leverages Vue 3, Bootstrap, and GSAP to create an engaging, fully responsive interface that highlights my technical projects and expertise as a full-stack developer.' , tools:['html' , 'css' , 'bootstrap' ,'vue.js' , 'Gsap'] , github_link:'https://github.com/AmanGupta0510/MY-PORTFOLIO'
-}
-,{
-    project_name : 'My Portfolio',project_desc:'A performant, space-themed developer portfolio. It leverages Vue 3, Bootstrap, and GSAP to create an engaging, fully responsive interface that highlights my technical projects and expertise as a full-stack developer.' , tools:['html' , 'css' , 'bootstrap' ,'vue.js' , 'Gsap'] , github_link:'https://github.com/AmanGupta0510/MY-PORTFOLIO'
-}
+
+
 
 
 
@@ -62,7 +40,7 @@ onMounted(() =>{
                     trigger:'.project-text',
                     start:'top 85%',
                     toggleActions:'play reverse play reverse',
-                    markers:true
+                    // markers:true
                 }
 
             }).to('.project-text', {opacity: 1, y: 0, duration: 0.8,})
@@ -73,7 +51,7 @@ onMounted(() =>{
                     trigger:'.project-outer-container',
                     start:'top 75%',
                     toggleActions:'play reverse play reverse',
-                    markers:true
+                    // markers:true
                 }
             }).to('.project-wrapper' , {opacity:1 , y:0 , duration:0.8 , stagger:0.15})
 

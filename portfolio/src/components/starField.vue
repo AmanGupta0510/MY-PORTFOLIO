@@ -336,9 +336,8 @@ function initNebulae() {
     driftSpeed: 0.0002 + Math.random() * 0.0002
   }))
 }
-
 function drawNebulae() {
-  ctx.globalCompositeOperation = 'lighter'   // overlapping clouds add light, like real emission nebulae
+  ctx.globalCompositeOperation = 'lighter'
 
   nebulae.forEach((n) => {
     n.pulsePhase += n.pulseSpeed
@@ -350,10 +349,9 @@ function drawNebulae() {
     const nx = n.x + Math.cos(n.driftAngle) * n.driftRadius + parallaxX * n.depth
     const ny = n.y + Math.sin(n.driftAngle) * n.driftRadius + parallaxY * n.depth
 
-    // glow a little brighter when the cursor is over the cloud
     const dist = Math.hypot(mouseX - nx, mouseY - ny)
     const near = Math.max(0, 1 - dist / (radius * 0.9))
-    const alpha = 0.045 + pulse * 0.035 + near * 0.05
+    const alpha = 0.08 + pulse * 0.06 + near * 0.06   // raised from 0.045 + pulse*0.035 + near*0.05
 
     const grad = ctx.createRadialGradient(nx, ny, 0, nx, ny, radius)
     grad.addColorStop(0, `rgba(${n.rgb.r}, ${n.rgb.g}, ${n.rgb.b}, ${alpha})`)
@@ -608,10 +606,12 @@ onUnmounted(() => {
   position: fixed;
   inset: 0;
   z-index: 0;
-background: radial-gradient(ellipse at center, #1c1c35 0%, #050508 75%);
+
+/* background: radial-gradient(ellipse at center, #090e27 0%, #030412 75%, #000005 100%); */
+
+background: radial-gradient(ellipse at center, #060919 0%, #030412 75%, #000000 100%);
 }
 </style>
-
 
 
 <!-- SpaceBackground.vue

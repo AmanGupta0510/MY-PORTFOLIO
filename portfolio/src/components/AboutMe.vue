@@ -26,7 +26,7 @@ onMounted(() => {
           toggleActions: 'play reverse play reverse'
         }
       })
-      .to('.about-text', { opacity: 1, y: 0, duration: 0.6 })
+      .to('.about-text', { opacity: 1, y: 0, duration: 0.9 })
       .to('.bio', { opacity: 1, y: 0, duration: 0.7 }, '-=0.4')
 
        gsap.timeline({
@@ -96,7 +96,7 @@ onUnmounted(() => {
 
 
                 <p class="bio">
-                    I'm Aman Gupta, a Software Engineer and a Web Developer and first-year MCA student based in Bihar. I am passionate about full-stack development, continuous learning, and turning great ideas into functional, user-friendly websites.
+                    I'm Aman Gupta, a Software Engineer and a Web Developer and first-year MCA student based in Bihar , India. I am passionate about full-stack development, continuous learning, and turning great ideas into functional, user-friendly websites.
                     <span  class="desktop-only"  style="color: #a0a8b3; font-family: monospace; font-size: clamp(1rem , 4vw , 1.2rem); font-weight: bold;">
                          I enjoy bridging the gap between clean backend logic and highly engaging, responsive front-end designs. Currently, my focus is on mastering modern web technologies, building scalable applications, and tackling complex coding challenges. I believe that great web development is not just about writing code, but about crafting digital experiences that are intuitive, efficient, and visually striking.
                     </span>

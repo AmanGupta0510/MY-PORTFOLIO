@@ -138,7 +138,7 @@ onUnmounted(() => {
 
         <div class="col-12 col-lg-6 d-flex justify-content-center order-1 order-lg-2 mb-4 mb-lg-0">
           <div class="photo-frame">
-            <img src="/photo2.jpeg" alt="Aman Gupta" class="hero-photo" />
+            <img src="/photo4.jpeg" alt="Aman Gupta" class="hero-photo" />
           </div>
         </div>
       </div>
@@ -220,7 +220,7 @@ onUnmounted(() => {
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid rgba(198, 202, 204, 0.4);
-  box-shadow: 0 0 40px rgba(189, 208, 217, 0.25);
+  box-shadow: 0 0 40px rgba(7, 23, 80, 0.504);
 }
 
 .social-links {
