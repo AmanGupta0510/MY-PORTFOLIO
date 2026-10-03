@@ -44,7 +44,7 @@ watch(pageReady, async (val) => {
 
 
   const tl = gsap.timeline({defaults:{ease:'power3.out'}});
-  gsap.set(['eyebrow' , '.name' , '.role-container' , '.desc'] , {x:-20})
+  gsap.set(['eyebrow' , '.name' , '.role-container' , '.desc-desktop' , '.desc-mobile'] , {x:-20 , opacity:0})
   gsap.set('.social-icon' , {y:20})
   gsap.set('.hero-photo', {scale:0.75 , rotate:-9})
   gsap.set(navElem.value.navRef , {y:-20});
@@ -52,11 +52,28 @@ watch(pageReady, async (val) => {
     .to('.eyebrow' , {opacity:1 , x:0 , duration:0.6} , '-=0.4')
     .to('.name'  , {opacity:1 , x:0 , duration:0.7} , '-=0.35' )
     .to('.role-container' , {opacity:1 , x:0 , duration:0.7} , '-=0.35')
-    .to('.desc' , {opacity:1 , x:0 , duration:0.7} , '-=0.35')
+    .to('.desc-desktop' , {opacity:1 , x:0 , duration:0.7} , '-=0.35')
     .to('.social-icon' , {opacity:1 , y:0 , duration:0.5, stagger:{each:0.09 , from:'center'}, clearProps:'transform', ease:'back.out(1.7)' } , '-=0.3')
     .to('.hero-photo' , {opacity:1 , scale:1 , rotate:0 , duration:0.9 , ease:'back.out(1.6)'} , '-=0.6')
 
 
+
+    const mm = gsap.matchMedia();
+
+    mm.add('(max-width:372px)', () => {
+      gsap.timeline({
+       defaults:{ease:'power3.out'}
+      })
+
+       .to(navElem.value.navRef , {opacity:1 , y:0 , duration:0.8 , clearProps:'transform'})
+    .to('.eyebrow' , {opacity:1 , x:0 , duration:0.6} , '-=0.4')
+    .to('.name'  , {opacity:1 , x:0 , duration:0.7} , '-=0.35' )
+    .to('.role-container' , {opacity:1 , x:0 , duration:0.7} , '-=0.35')
+     .to('.desc-mobile', {  opacity: 1, x: 0, duration: 0.7} , '-=0.35')
+    .to('.social-icon' , {opacity:1 , y:0 , duration:0.5, stagger:{each:0.09 , from:'center'}, clearProps:'transform', ease:'back.out(1.7)' } , '-=0.3')
+    .to('.hero-photo' , {opacity:1 , scale:1 , rotate:0 , duration:0.9 , ease:'back.out(1.6)'} , '-=0.6')
+
+    })
 })
 
 
@@ -69,7 +86,7 @@ onUnmounted(() => {
   <Preloader @done="pageReady = true" />
   <NavBar v-if="pageReady" ref="navElem" />
 
-  <section class="hero  min-vh-100 d-flex align-items-center">
+  <section class="hero  min-vh-100 d-flex align-items-center scroll-section" id="home">
     <div class="container">
       <div class="row justify-content-center align-items-center">
         <div class="col-12 col-lg-6 px-3 px-md-5 order-2 order-lg-1">
@@ -80,7 +97,10 @@ onUnmounted(() => {
                    <p class="role">{{ roleMessage }}</p>
             </div>
             <div class="desc-container">
-              <p class="desc">
+              <p class="desc-mobile">
+                Building interactive, high-performance web applications seamlessly across the frontend and backend.
+              </p>
+              <p class="desc-desktop">
                 Full-stack developer building high-performance, interactive websites. Working in
                 Frontend, Backend to turn ideas into clean efficient user-friendly web applications.
               </p>
@@ -166,6 +186,15 @@ onUnmounted(() => {
 .hero-text {
   max-width: 800px;
 }
+.desc-desktop{
+  opacity: 0;
+  font-family: monospace;
+  font-size: 1rem;
+  color: #a0a8b3;
+  line-height: 1.6;
+  max-width: 480px;
+  font-weight: bold;
+}
 
 .eyebrow {
   opacity: 0;
@@ -192,7 +221,7 @@ onUnmounted(() => {
 }
 
 .role {
-  font-size: clamp(1.5rem, 2vw, 2.5rem);
+  font-size: clamp(1.2rem, 2vw, 2.5rem);
   font-family: monospace;
   background: linear-gradient(135deg, #10b981 0%, #6ee7b7 100%);
   -webkit-background-clip: text;
@@ -203,8 +232,9 @@ onUnmounted(() => {
   margin-bottom: 1rem;
 }
 
-.desc {
-   opacity: 0;
+.desc-mobile {
+  display: none;
+  opacity: 0;
   font-family: monospace;
   font-size: 1rem;
   color: #a0a8b3;
@@ -215,8 +245,8 @@ onUnmounted(() => {
 
 .hero-photo {
    opacity: 0;
-  width: 23rem;
-  height: 23rem;
+  width: 21rem;
+  height: 21rem;
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid rgba(198, 202, 204, 0.4);
@@ -282,9 +312,9 @@ onUnmounted(() => {
     align-items: center;
   }
   .hero-photo {
-    margin-top: 4rem;
-    width: 18rem !important;
-    height: 18rem !important;
+    margin-top: 1.5rem;
+    width: 15rem !important;
+    height: 15rem !important;
   }
 }
 @media (max-width: 375px) {
@@ -292,11 +322,17 @@ onUnmounted(() => {
     font-size: clamp(1.3rem, 3vw, 2.5rem);
   }
   .hero-photo {
-    width: 15rem;
-    height: 15rem;
+    width: 13rem;
+    height: 13rem;
   }
   .photo-frame {
-    margin-top: 5rem;
+    margin-top: 2.5rem;
+  }
+  .desc-desktop{
+    display: none;
+  }
+  .desc-mobile{
+    display: block;
   }
 }
 </style>

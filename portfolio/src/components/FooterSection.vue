@@ -3,20 +3,23 @@ import { onMounted , onUnmounted, ref } from 'vue';
 const currentYear = new Date().getFullYear();
 
 const emojisArr = ['❤️' , '☕' , '🥰'];
-let indx = 0;
 
-const emojis = ref(emojisArr[indx]);
 
+const emojis = ref(emojisArr[0]);
+ let indx = 0;
+let footer_emojis_interval ;
 onMounted(() =>{
-    setInterval(() =>{
+
+    footer_emojis_interval = setInterval(() =>{
+
+        emojis.value= emojisArr[(indx) % emojisArr.length]
         indx++;
-        emojis .value= emojisArr[(indx) % emojisArr.length]
-    } , 1700)
+    } , 1300)
 })
 
 onUnmounted(() =>{
-    indx=0;
-    clearInterval();
+    indx = 0;
+    clearInterval(footer_emojis_interval);
 })
 </script>
 
@@ -24,7 +27,7 @@ onUnmounted(() =>{
     <section id="footer" class="footer-section">
         <div class="footer-content">
             <div class="footer-left">
-                <p>&copy; {{ currentYear }} Aman Gupta.</p>
+                <p>&copy; {{ currentYear }} Aman Gupta.All rights reserved.</p>
 
 
             </div>
@@ -45,14 +48,15 @@ onUnmounted(() =>{
     position: relative;
     z-index: 1;
     /* Using a very dark gray/black to match the bottom of your space gradient */
-    background-color: #050505;
+    background: transparent;
+    backdrop-filter: blur(15px);
     min-height: 10vh;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 2rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.05); /* Subtle top border for separation */
-    color: #9ca3af; /* Soft gray text */
+    border-top: 1px solid rgba(255, 255, 255, 0.148); /* Subtle top border for separation */
+    color: #d2d8e2; /* Soft gray text */
 }
 
 .footer-content {
@@ -77,7 +81,7 @@ p {
 }
 
 .social-link {
-    color: #9ca3af;
+    color: #b4b8c0;
     text-decoration: none;
     font-size: 1.1rem;
     font-weight: 500;

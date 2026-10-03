@@ -12,11 +12,15 @@ import starField from './components/starField.vue';
 
 <template>
   <starField   />
+   <main>
 
-  <HeroBackground/>
+<HeroBackground/>
   <AboutMe/>
   <SkillSection />
   <ProjectSection />
   <ContactSection />
   <FooterSection />
+
+   </main>
+
 </template>

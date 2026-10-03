@@ -40,7 +40,7 @@ onMounted(() =>{
                     trigger:'.project-text',
                     start:'top 85%',
                     toggleActions:'play reverse play reverse',
-                    // markers:true
+                    
                 }
 
             }).to('.project-text', {opacity: 1, y: 0, duration: 0.8,})
@@ -51,7 +51,7 @@ onMounted(() =>{
                     trigger:'.project-outer-container',
                     start:'top 75%',
                     toggleActions:'play reverse play reverse',
-                    // markers:true
+
                 }
             }).to('.project-wrapper' , {opacity:1 , y:0 , duration:0.8 , stagger:0.15})
 
@@ -69,7 +69,7 @@ onUnmounted(() =>{
 
 <template>
 
-    <section id="projects" class="project-section">
+    <section id="projects" class="project-section scroll-section">
 
         <div class="d-flex pb-2 justify-content-center align-items-center">
             <span class="project-text">

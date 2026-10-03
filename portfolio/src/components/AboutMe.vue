@@ -15,7 +15,7 @@ onMounted(() => {
 
     const mm = gsap.matchMedia()
 
-    // Desktop: plays once, deliberate timing
+    // Desktop: plays once
     mm.add('(min-width:768px)', () => {
 
       gsap.timeline({
@@ -35,7 +35,7 @@ onMounted(() => {
       trigger: '.stat-card-wrap',
       start: 'top 85%',
       toggleActions: 'play reverse play reverse',
-      // markers:true
+
     }
   })
   .to('.stat-card-wrap', {
@@ -71,7 +71,6 @@ onMounted(() => {
 
   })
 })
-
 onUnmounted(() => {
   ctx.revert()
 })
@@ -80,7 +79,7 @@ onUnmounted(() => {
 
 
 <template>
-    <section id="#About" class="about  ">
+    <section id="about" class="about  scroll-section min-h-screen">
 
         <div class="d-flex pb-2 justify-content-center align-items-center">
             <span class="about-text">
@@ -96,7 +95,7 @@ onUnmounted(() => {
 
 
                 <p class="bio">
-                    I'm Aman Gupta, a Software Engineer and a Web Developer and first-year MCA student based in Bihar , India. I am passionate about full-stack development, continuous learning, and turning great ideas into functional, user-friendly websites.
+                   Hello! I'm Aman Gupta, a Software developer and a first-year MCA student based in Bihar India. I am passionate about full-stack development, continuous learning, and turning great ideas into functional, user-friendly websites.
                     <span  class="desktop-only"  style="color: #a0a8b3; font-family: monospace; font-size: clamp(1rem , 4vw , 1.2rem); font-weight: bold;">
                          I enjoy bridging the gap between clean backend logic and highly engaging, responsive front-end designs. Currently, my focus is on mastering modern web technologies, building scalable applications, and tackling complex coding challenges. I believe that great web development is not just about writing code, but about crafting digital experiences that are intuitive, efficient, and visually striking.
                     </span>

@@ -112,7 +112,7 @@ onUnmounted(() =>{
 
 <template>
 
-<section id="skills" class="skill-section">
+<section id="skills" class="skill-section scroll-section">
 
 
     <div class="d-flex pb-2 justify-content-center align-items-center">
@@ -199,6 +199,7 @@ onUnmounted(() =>{
   z-index: 1;
   padding: 8rem 2.5rem 3rem;
   scroll-margin-top: 90px;
+  
 }
 
 .skill-text {

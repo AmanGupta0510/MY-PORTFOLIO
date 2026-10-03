@@ -1,7 +1,7 @@
 <template>
 
 
-  <section class="contact-section d-flex align-items-center" id="contact">
+  <section class="contact-section scroll-section d-flex align-items-center" id="contact">
     <div class="container contact-container">
       <div class="row align-items-center">
 
@@ -90,23 +90,20 @@ let ctx;
 
 const submitForm = () => {
   console.log('Form submitted:', formData.value);
-  // Add your Flask API POST request logic here
-
-  // Reset form after submission
   formData.value = { name: '', email: '', subject: '', message: '' };
 };
 
 onMounted(() => {
   ctx = gsap.context(() => {
 
-    gsap.set(['.contact-info'] , { x:-10, opacity:0})
-    gsap.set('.form-wrapper' , {opacity:0 , x:20})
+    gsap.set(['.contact-info'] , { x:-40, opacity:0})
+    gsap.set('.form-wrapper' , {opacity:0 , x:40})
 
     const tl = gsap.timeline({
             defaults:{ease:'power3.out'},
             scrollTrigger: {
                 trigger: '.contact-section',    // note: 'trigger', not 'ScrollTrigger'
-                start: 'top 35%',// 'markers' (plural), not 'marker'
+                start: 'top 55%',// 'markers' (plural), not 'marker'
                 // markers:true,
                 toggleActions: 'play reverse play reverse',
       }

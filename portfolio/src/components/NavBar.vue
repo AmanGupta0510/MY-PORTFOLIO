@@ -1,6 +1,6 @@
 <template>
   <nav class="custom-navbar" ref="navRef">
-    <a href="#" class="logo">
+    <a href="home" class="logo">
       <span class="logo-icon">&lt;<span class="logo-text">Aman</span>/&gt;</span>
     </a>
 
@@ -9,12 +9,12 @@
     </button>
 
     <ul class="nav-links desktop-only">
-      <li><a href="#Home">Home</a></li>
-      <li><a href="#About">About</a></li>
-      
-      <li><a href="#Skills">Skills</a></li>
-      <li><a href="#Projects">Projects</a></li>
-      <li><a href="#Contact">Contact</a></li>
+      <li><a href="#home" :class="activeSection === 'home' ? 'active-neon' : 'text-secondary'">Home</a></li>
+      <li><a href="#about" :class="activeSection === 'about' ? 'active-neon' : 'text-secondary'">About</a></li>
+
+      <li><a href="#skills" :class="activeSection === 'skills' ? 'active-neon' : 'text-secondary'">Skills</a></li>
+      <li><a href="#projects" :class="activeSection === 'projects' ? 'active-neon' : 'text-secondary'">Projects </a></li>
+      <li><a href="#contact" :class="activeSection === 'contact' ? 'active-neon' : 'text-secondary'">Contact</a></li>
     </ul>
   </nav>
 
@@ -23,22 +23,46 @@
   <aside class="sidebar" :class="{ open: isOpen }">
     <button class="close-btn" @click="isOpen = false">✕</button>
     <ul class="sidebar-links">
-      <li><a href="#Home" @click="isOpen = false">Home</a></li>
-      <li><a href="#About" @click="isOpen = false">About</a></li>
-      <li><a href="#Education" @click="isOpen = false">Education</a></li>
-      <li><a href="#Skills" @click="isOpen = false">Skills</a></li>
-      <li><a href="#Projects" @click="isOpen = false">Projects</a></li>
-      <li><a href="#Contact" @click="isOpen = false">Contact</a></li>
+      <li><a href="#home" @click="isOpen = false">Home</a></li>
+      <li><a href="#about" @click="isOpen = false">About</a></li>
+      <li><a href="#skills" @click="isOpen = false">Skills</a></li>
+      <li><a href="#projects" @click="isOpen = false">Projects</a></li>
+      <li><a href="#contact" @click="isOpen = false">Contact</a></li>
     </ul>
   </aside>
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref  , onMounted} from 'vue'
+import gsap from 'gsap';
+import ScrollTrigger  from 'gsap/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger)
 
 const isOpen = ref(false)
 const navRef  = ref(null);
+const activeSection = ref('home')
 defineExpose({ navRef })
+
+onMounted(() =>{
+
+  const sections = gsap.utils.toArray('.scroll-section')
+  sections.forEach((section) =>{
+    ScrollTrigger.create({
+      trigger:section,
+      start:'top center',
+      end:'bottom center',
+      onEnter: ()=>{activeSection.value = section.id ; },
+      onEnterBack:()=>{activeSection.value = section.id ;}
+
+    })
+  })
+  console.log(activeSection.value);
+
+
+
+
+})
+
 </script>
 
 <style scoped>
