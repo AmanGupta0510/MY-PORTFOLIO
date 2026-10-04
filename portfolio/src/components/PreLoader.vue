@@ -1,9 +1,13 @@
 <!-- Preloader.vue -->
 <template>
   <div v-if="showLoader" class="preloader" ref="loaderEl">
-    <div class="config-lines" ref="configEl">
-      <p v-for="(line, i) in configLines" :key="i" class="config-line">{{ line }}</p>
-    </div>
+     <p class="loading-text" ref="textEl">
+      <span
+        v-for="(char, i) in 'Loading...'.split('')"
+        :key="i"
+        class="char"
+      >{{ char === ' ' ? '\u00A0' : char }}</span>
+    </p>
 
     <svg class="rocket" ref="rocketEl" viewBox="0 0 60 120" v-show="showRocket">
       <ellipse cx="30" cy="45" rx="14" ry="35" fill="#e2e8f0" />
@@ -27,18 +31,12 @@ import gsap from 'gsap'
 const showLoader = ref(true)
 const showRocket = ref(false)
 const loaderEl = ref(null)
-const configEl = ref(null)
+const textEl = ref(null)
 const rocketEl = ref(null)
 const exhaustWrap = ref(null)
 
 
-const configLines = [
-  '> initializing systems...',
-  '> checking modules... OK',
-  '> fuel levels nominal',
-  '> ignition sequence armed',
-  '> LAUNCH'
-]
+
 
 const emit = defineEmits(['done'])
 let exhaustInterval = null
@@ -72,14 +70,22 @@ onMounted(() => {
   })
 
   // Phase 1: config lines type in one by one
-  const lines = configEl.value.querySelectorAll('.config-line')
-  tl.from(lines, {
+
+   tl.from('.char', {
     opacity: 0,
-    x: -15,
-    duration: 0.3,
-    stagger: 0.35
+    y: 14,
+    duration: 0.4,
+    stagger: 0.04,
+    ease: 'back.out(1.6)'
   })
-  .to(configEl.value, { opacity: 0, duration: 0.3 }, '+=0.3')
+  // hold briefly, then wave out the same way
+  tl.to('.char', {
+    opacity: 0,
+    y: -10,
+    duration: 0.3,
+    stagger: 0.03,
+    ease: 'power1.in'
+  }, '+=0.3')
 
   // Phase 2: rocket launches
   .call(() => {
@@ -107,21 +113,19 @@ onUnmounted(() => clearInterval(exhaustInterval))
   background: #05050a;
   z-index: 2000;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.config-lines {
+.loading-text {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-size: 2em;
-  font-weight: 1700;
-  color: #f2f2f2;
+  font-family: monospace;
+  font-size: 2.1rem;
+  color: #ffffff;
+  letter-spacing: 0.05em;
+  font-weight: bold;
 }
-
-.config-line { margin: 4px 0; }
-
 .rocket {
   position: absolute;
   bottom: 10%;
