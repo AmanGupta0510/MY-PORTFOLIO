@@ -33,7 +33,7 @@ onUnmounted(() =>{
             </div>
             <p>Made with {{ emojis }} by Aman Gupta 😉</p>
             <div class="footer-right">
-                <!-- Replace '#' with your actual profile URLs -->
+
                 <a href="https://github.com/amangupta0510" target="_blank" rel="noopener noreferrer" class="social-link">GitHub</a>
                 <a href="https://linkedin.com/in/aman-gupta-a70bb2361" target="_blank" rel="noopener noreferrer" class="social-link">LinkedIn</a>
                 <a href="https://instagram.com/amngupta510" target="_blank" rel="noopener noreferrer" class="social-link">Instagram</a>
@@ -47,7 +47,7 @@ onUnmounted(() =>{
 .footer-section {
     position: relative;
     z-index: 1;
-    /* Using a very dark gray/black to match the bottom of your space gradient */
+
     background: transparent;
     backdrop-filter: blur(15px);
     min-height: 10vh;
@@ -56,7 +56,7 @@ onUnmounted(() =>{
     justify-content: center;
     padding: 2rem;
     border-top: 1px solid rgba(255, 255, 255, 0.148); /* Subtle top border for separation */
-    color: #d2d8e2; /* Soft gray text */
+    color: #d2d8e2;
 }
 
 .footer-content {
@@ -89,11 +89,13 @@ p {
 }
 
 .social-link:hover {
-    color: #ffffff; /* Brightens up on hover */
-    transform: translateY(-2px); /* Slight lift effect on hover */
+    color: #ffffff;
+    transform: translateY(-2px);
 }
 
-/* Responsive adjustment for mobile screens */
+
+
+
 @media (max-width: 768px) {
     .footer-content {
         flex-direction: column;

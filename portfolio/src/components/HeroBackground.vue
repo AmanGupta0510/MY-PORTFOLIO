@@ -263,7 +263,7 @@ onUnmounted(() => {
 }
 
 .social-icon {
-  /* scales from 32px on phones up to 48px on desktop */
+
   opacity: 0;
   font-size: clamp(32px, 7vw, 40px);
   line-height: 1;
@@ -275,7 +275,7 @@ onUnmounted(() => {
 }
 
 .social-icon svg {
-  width: 1em; /* matches the font icons' size */
+  width: 1em;
   height: 1em;
 }
 
@@ -283,7 +283,7 @@ onUnmounted(() => {
   transform: translateY(-4px) scale(1.1);
 }
 
-/* original brand colors */
+
 .github {
   color: #b5b3b3;
 }

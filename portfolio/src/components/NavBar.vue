@@ -92,14 +92,14 @@ onMounted(() =>{
 
 }
 
-/* Subtle coding bracket accent */
+
 .logo-icon {
   color: #ffffff;
   font-weight: 700;
   font-size: 1.1rem;
 }
 
-/* Your animated gradient name */
+
 .logo-text {
   font-weight: 700;
   font-size: 1.25rem;
@@ -117,7 +117,6 @@ background: linear-gradient(
   -webkit-text-fill-color: transparent;
   background-size: 250% 100%;
    color: transparent;
-     /* filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.5)); */
 
   animation: moveGradient 5s linear infinite;
 }

@@ -52,13 +52,12 @@ onMounted(()=>{
 
 
       }).to('.skill-text' , {opacity:1 , y:0 , duration:1.8})
-      
+
         const tl = gsap.timeline({
             defaults:{ease:'power3.out'},
             scrollTrigger: {
-                trigger: '.skill-card1',    // note: 'trigger', not 'ScrollTrigger'
+                trigger: '.skill-card1',
                 start: 'top 95%',
-                // markers: true,                // 'markers' (plural), not 'marker'
                 toggleActions: 'play none none reverse',
             }
         })
@@ -69,9 +68,8 @@ onMounted(()=>{
         const tl2 = gsap.timeline({
             defaults:{ease:'power3.out'},
             scrollTrigger: {
-                trigger: '.skill-card2',    // note: 'trigger', not 'ScrollTrigger'
+                trigger: '.skill-card2',
                 start: 'top 95%',
-                // markers: true,                // 'markers' (plural), not 'marker'
                 toggleActions: 'play none none reverse',
             }
         })
@@ -82,9 +80,8 @@ onMounted(()=>{
         const tl4 = gsap.timeline({
             defaults:{ease:'power3.out'},
             scrollTrigger: {
-                trigger: '.skill-card4',    // note: 'trigger', not 'ScrollTrigger'
+                trigger: '.skill-card4',
                 start: 'top 95%',
-                // markers: true,                // 'markers' (plural), not 'marker'
                 toggleActions: 'play none none reverse',
             }
         })
@@ -95,9 +92,8 @@ onMounted(()=>{
         const tl5 = gsap.timeline({
             defaults:{ease:'power3.out'},
             scrollTrigger: {
-                trigger: '.skill-card5',    // note: 'trigger', not 'ScrollTrigger'
+                trigger: '.skill-card5',
                 start: 'top 95%',
-                // markers: true,                // 'markers' (plural), not 'marker'
                 toggleActions: 'play none none reverse',
             }
         })
@@ -243,11 +239,11 @@ onUnmounted(() =>{
 .database-skill-wrapper,
 .programming-skill-wrapper,
 .tools-skill-wrapper {
-  margin-bottom: 1.2rem;   /* clear separation between each category */
+  margin-bottom: 1.2rem;
 }
 
 .tools-skill-wrapper {
-  margin-bottom: 0;   /* last group needs no trailing gap */
+  margin-bottom: 0;
 }
 
 .group-title {

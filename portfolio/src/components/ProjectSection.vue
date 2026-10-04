@@ -149,25 +149,25 @@ onUnmounted(() =>{
   border-radius: 20px;
 }
 
-/* ---------- the scrollable container ---------- */
+
 .project-outer-container {
   max-width: 900px;
   margin: 2rem auto 0;
-  max-height: 65vh;          /* fixed height cap: this is what creates the inner scroll */
-  overflow-y: auto;          /* scrolls vertically inside the box, not the whole page */
+  max-height: 65vh;
+  overflow-y: auto;
   overflow-x: hidden;
-  padding: 0.5rem 1rem 0.5rem 0.5rem;   /* right padding leaves room for the scrollbar */
+  padding: 0.5rem 1rem 0.5rem 0.5rem;
   display: flex;
   flex-direction: column;
   gap: 2rem;
 }
 
-/* thin, themed scrollbar (Chrome/Edge/Safari) */
+
 .project-outer-container::-webkit-scrollbar {
  display: none;
 }
 
-/* ---------- one project row ---------- */
+
 .project-wrapper {
   display: flex;
   align-items: flex-start;

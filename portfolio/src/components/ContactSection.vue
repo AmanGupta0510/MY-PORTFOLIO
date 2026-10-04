@@ -102,9 +102,8 @@ onMounted(() => {
     const tl = gsap.timeline({
             defaults:{ease:'power3.out'},
             scrollTrigger: {
-                trigger: '.contact-section',    // note: 'trigger', not 'ScrollTrigger'
-                start: 'top 55%',// 'markers' (plural), not 'marker'
-                // markers:true,
+                trigger: '.contact-section',
+                start: 'top 55%',
                 toggleActions: 'play reverse play reverse',
       }
     })
@@ -152,7 +151,6 @@ onUnmounted(() => {
   letter-spacing: 1px;
 }
 
-/* Glassmorphism/Dark Theme Form Container */
 .form-wrapper {
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -160,7 +158,6 @@ onUnmounted(() => {
   backdrop-filter: blur(10px);
 }
 
-/* Overriding Bootstrap Form Controls for Space Theme */
 .custom-input {
   background: rgba(0, 0, 0, 0.4);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -174,16 +171,15 @@ onUnmounted(() => {
   color: #6c757d;
 }
 
-/* The neon green glow on focus to match your hero section */
 .custom-input:focus {
   background: rgba(0, 0, 0, 0.6);
-  border-color: #28a745; /* Bootstrap success green, adjust to match your exact neon green */
+  border-color: #28a745;
   box-shadow: 0 0 10px rgba(40, 167, 69, 0.25);
   color: #ffffff;
   outline: none;
 }
 
-/* Custom Submit Button */
+
 .custom-submit-btn {
   background: transparent;
   color: #28a745;
