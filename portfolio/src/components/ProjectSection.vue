@@ -3,6 +3,8 @@
 import { ref , onMounted , onUnmounted , nextTick } from 'vue';
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import trekThrill from '@/assets/trekThrill.png'
+import portfolio from '@/assets/portfolio.png'
 gsap.registerPlugin(ScrollTrigger)
 ScrollTrigger.config({ ignoreMobileResize: true })
 
@@ -12,10 +14,10 @@ const refreshScroll = () => {
 const projects = ref([
 
 {
-    project_name : 'Trek Thrill',project_desc:'A full-stack web application tailored for outdoor adventures. Administrators can seamlessly create itineraries, oversee bookings, and assign expert guides to specific treks from a centralized dashboard, while users can easily browse and book solo or group expeditions.' , tools:['html' , 'css' , 'bootstrap' ,'vue.js' , 'flask'] , github_link:'https://github.com/25dp1000037/Trekking_Management_Application_V2'
+    project_name : 'Trek Thrill',project_desc:'A full-stack web application tailored for outdoor adventures. Administrators can seamlessly create itineraries, oversee bookings, and assign expert guides to specific treks from a centralized dashboard, while users can easily browse and book solo or group expeditions.' , tools:['html' , 'css' , 'bootstrap' ,'vue.js' , 'flask'] , github_link:'https://github.com/25dp1000037/Trekking_Management_Application_V2' ,image:trekThrill
 }
 ,{
-    project_name : 'My Portfolio',project_desc:'A performant, space-themed developer portfolio. It leverages Vue 3, Bootstrap, and GSAP to create an engaging, fully responsive interface that highlights my technical projects and expertise as a full-stack developer.' , tools:['html' , 'css' , 'bootstrap' ,'vue.js' , 'Gsap'] , github_link:'https://github.com/AmanGupta0510/MY-PORTFOLIO'
+    project_name : 'My Portfolio',project_desc:'A performant, space-themed developer portfolio. It leverages Vue 3, Bootstrap, and GSAP to create an engaging, fully responsive interface that highlights my technical projects and expertise as a full-stack developer.' , tools:['html' , 'css' , 'bootstrap' ,'vue.js' , 'Gsap'] , github_link:'https://github.com/AmanGupta0510/MY-PORTFOLIO' , image:'@/assets/portfolio.png',image:portfolio
 }
 
 
@@ -40,7 +42,7 @@ onMounted(() =>{
                     trigger:'.project-text',
                     start:'top 85%',
                     toggleActions:'play reverse play reverse',
-                    
+
                 }
 
             }).to('.project-text', {opacity: 1, y: 0, duration: 0.8,})
@@ -206,7 +208,7 @@ onUnmounted(() =>{
 .project-img-box {
   flex: 0 0 38%;
 
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 16 / 11;
   border-radius: 8px;
   overflow: hidden;
 }
