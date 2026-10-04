@@ -7,13 +7,16 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-    defaults: { run: { working-directory: portfolio } }
+    defaults:
+      run:
+        working-directory: portfolio
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: lts/*
           cache: npm
+          cache-dependency-path: portfolio/package-lock.json
       - run: npm ci
       - run: npm run build
       - name: Publish the build to the gh-pages branch
