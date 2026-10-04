@@ -1,6 +1,6 @@
 <template>
   <nav class="custom-navbar" ref="navRef">
-    <a href="home" class="logo">
+    <a href="/" class="logo">
       <span class="logo-icon">&lt;<span class="logo-text">Aman</span>/&gt;</span>
     </a>
 
