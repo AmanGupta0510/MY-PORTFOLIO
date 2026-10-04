@@ -35,5 +35,5 @@ src/
 ## Contact
 
 - GitHub: [optimisticAmn](https://github.com/amangupta0510)
-- LinkedIn: [Aman Gupta](https://linkedin.com/in/amangupta)
+- LinkedIn: [Aman Gupta](https://linkedin.com/in/aman-gupta-a70bb2361)
 

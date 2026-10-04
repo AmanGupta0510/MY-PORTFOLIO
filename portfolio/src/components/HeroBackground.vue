@@ -130,7 +130,7 @@ onUnmounted(() => {
               </a>
 
               <a
-                href="https://linkedin.com/in/your-username"
+                href="https://linkedin.com/in/aman-gupta-a70bb2361"
                 target="_blank"
                 rel="noopener"
                 class="social-icon linkedin"
