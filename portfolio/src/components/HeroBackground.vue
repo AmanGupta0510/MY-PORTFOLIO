@@ -110,7 +110,7 @@ onUnmounted(() => {
           <div class="social-links-outer-box">
             <div class="social-links">
               <a
-                href="https://github.com/your-username"
+                href="https://github.com/amangupta0510"
                 target="_blank"
                 rel="noopener"
                 class="social-icon github"
@@ -120,7 +120,7 @@ onUnmounted(() => {
               </a>
 
               <a
-                href="https://instagram.com/your-username"
+                href="https://instagram.com/amngupta510"
                 target="_blank"
                 rel="noopener"
                 class="social-icon instagram"
@@ -140,7 +140,7 @@ onUnmounted(() => {
               </a>
 
               <a
-                href="https://leetcode.com/your-username"
+                href="https://leetcode.com/OptimisticAmn"
                 target="_blank"
                 rel="noopener"
                 class="social-icon leetcode"

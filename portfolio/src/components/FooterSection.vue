@@ -35,9 +35,9 @@ onUnmounted(() =>{
             <div class="footer-right">
                 <!-- Replace '#' with your actual profile URLs -->
                 <a href="https://github.com/amangupta0510" target="_blank" rel="noopener noreferrer" class="social-link">GitHub</a>
-                <a href="#" target="_blank" rel="noopener noreferrer" class="social-link">LinkedIn</a>
-                <a href="#" target="_blank" rel="noopener noreferrer" class="social-link">Instagram</a>
-                <a href="#" target="_blank" rel="noopener noreferrer" class="social-link">LeetCode</a>
+                <a href="https://instagram.com/amngupta510" target="_blank" rel="noopener noreferrer" class="social-link">LinkedIn</a>
+                <a href="https://instagram.com/amngupta510" target="_blank" rel="noopener noreferrer" class="social-link">Instagram</a>
+                <a href="https://leetcode.com/OptimisticAmn" target="_blank" rel="noopener noreferrer" class="social-link">LeetCode</a>
             </div>
         </div>
     </section>
