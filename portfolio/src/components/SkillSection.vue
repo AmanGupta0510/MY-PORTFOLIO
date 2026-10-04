@@ -38,7 +38,21 @@ onMounted(()=>{
 
         gsap.set(['.skill-card1' , '.frontend' , '.database' , '.skill-card3' , '.skill-card4' , '.tools'] , { x:30, opacity:0})
         gsap.set(['.skill-card2' ,  '.backend' , '.languages' , '.skill-card5'] , { x:-30, opacity:0})
+        gsap.set('.skill-text' , {opacity:0 , y:40})
 
+      gsap.timeline({
+
+        defaults:{ease:'power3.out'},
+        scrollTrigger:{
+          trigger:'.skill-text',
+          start: 'top 90%',
+          toggleActions:'play reverse play reverse',
+
+        }
+
+
+      }).to('.skill-text' , {opacity:1 , y:0 , duration:1.8})
+      
         const tl = gsap.timeline({
             defaults:{ease:'power3.out'},
             scrollTrigger: {
@@ -199,7 +213,7 @@ onUnmounted(() =>{
   z-index: 1;
   padding: 8rem 2.5rem 3rem;
   scroll-margin-top: 90px;
-  
+
 }
 
 .skill-text {
